@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class BouncingBall {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the initial height (Y meters): ");
+        double height = scanner.nextDouble();
+        double gravity = 9.8; // m/s^2
+        double initialVelocity = Math.sqrt(2 * gravity * height);
+        double firstBounceHeight = initialVelocity * initialVelocity / (2 * gravity);
+        double secondBounceHeight = Math.pow(initialVelocity / 2, 2) / (2 * gravity);
+        double firstGroundTravel = 2 * firstBounceHeight;
+        double secondGroundTravel = 2 * secondBounceHeight;
+        double totalDistance = height + firstGroundTravel + secondBounceHeight + secondGroundTravel;
+
+        System.out.printf("Total distance traversed: %.2f meters\n", totalDistance);
+    }
+}
