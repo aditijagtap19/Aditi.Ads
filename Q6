@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class FixedDeposit {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the initial principal amount: ");
+        double principal = scanner.nextDouble();
+        System.out.print("Enter the annual interest rate (e.g., 0.05 for 5%): ");
+        double interestRate = scanner.nextDouble();
+        System.out.println("Year\tBalance");
+        for (int year = 1; year <= 5; year++) {
+            double interest = principal * interestRate;
+            principal += interest;
+            System.out.printf("%d\t%.2f\n", year, principal);
+        }
+    }
+}
